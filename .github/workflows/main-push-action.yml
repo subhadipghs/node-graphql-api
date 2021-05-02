@@ -6,24 +6,20 @@ on:
   
   pull_request:
     branches: [ main ]
-
 jobs:
   build:
+
     runs-on: ubuntu-latest
 
+    strategy:
+      matrix:
+        node-version: [14.x]
+
     steps:
-      - uses: actions/checkout@v2
-      - name: Node version 12.x
-      - uses: actions/setup-node@v1
-
-        with:
-          node-version: '14.x'
-
-      - name: Installing and caching dependencies
-        run: npm ci
-
-      - name: Building package
-        run: npm run build --if-present
-
-      - name: Testing the package
-        run: npm run test
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - run: npm ci
+    - run: npm run test
