@@ -1,0 +1,15 @@
+# deps
+node_modules
+
+# build folders
+build
+dist
+
+# ide folders
+.idea
+
+# env files
+
+.env*
+
+!.env.example
