@@ -1,14 +1,18 @@
 const express = require('express')
-
+const { graphqlHTTP } = require('express-graphql')
+const schema = require('./schema');
 const app = express();
 
 app.use(express.json());
 
-app.get('/health', (_, res) => {
-  return res.json({
-    uptime: process.uptime(),
-    message: 'Server is up',
+// graphql endpoint
+app.use(
+  '/graphql',
+  graphqlHTTP({
+    schema,
+    graphiql: true    
   })
-})
+)
+
 
 module.exports = app;
