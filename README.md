@@ -24,7 +24,7 @@ Sample web apis using Node & GraphQL.
 
 - To run this application
 
-`docker run -dp 4000:4000 subhadipghosh/node-graphql-api`
+`docker run -dp 4000:4000 node-graphql-api`
 
 - Check if application is working or not
 
