@@ -18,6 +18,14 @@ Sample web apis using Node & GraphQL.
 ---
 ## How to run
 
-- To start this application using docker compose
+- To build this application using docker
 
-`docker-compose up -d`
+`docker build -t node-graphql-api .`
+
+- To run this application
+
+`docker run -dp 4000:4000 subhadipghosh/node-graphql-api`
+
+- Check if application is working or not
+
+`curl -i http://localhost:4000/health`
