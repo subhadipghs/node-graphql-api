@@ -1,4 +1,11 @@
-const { GraphQLObjectType, GraphQLString, GraphQLSchema, GraphQLID, GraphQLInt, GraphQLNonNull, GraphQLList, GraphQLFloat, GraphQLBoolean } = require("graphql");
+const { 
+  GraphQLObjectType, 
+  GraphQLString, 
+  GraphQLSchema, 
+  GraphQLNonNull, 
+  GraphQLFloat, 
+  GraphQLBoolean 
+} = require("graphql");
 
 const HealthCheckType = new GraphQLObjectType({
   name: 'Health',
