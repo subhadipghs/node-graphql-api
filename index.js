@@ -1,6 +1,5 @@
 require('dotenv').config();
-const app = require('./src/app');
-const http = require('http')
+const server = require('./src/app');
 
 
 function gracefulShutdown(server) {
@@ -10,7 +9,6 @@ function gracefulShutdown(server) {
 
 const main = async () => {
   try {
-    const server = http.createServer(app);
     server.listen(process.env.PORT, () => {
       console.log(`Server has started successfully! 🚀`);
     })
